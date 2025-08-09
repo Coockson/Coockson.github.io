@@ -60,7 +60,7 @@ SKILLS:
         <div className="mb-8">
           <div className="inline-block p-1 rounded-full bg-gradient-to-r from-tech-cyan to-tech-green animate-float">
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+              src="https://media.licdn.com/dms/image/v2/D4D03AQHBqvdZaQ_lUg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719842055582?e=1746057600&v=beta&t=8QxfO9cOw6xLVSMZJ4JUdpHzY7SQyAT8qBE3iKm0LFw" 
               alt="Khaan Claasz Coockson" 
               className="w-32 h-32 rounded-full object-cover"
               data-testid="img-profile-photo"
@@ -105,7 +105,7 @@ SKILLS:
 
         <div className="flex flex-wrap justify-center gap-4">
           <a 
-            href="https://linkedin.com/in/khaancc" 
+            href="https://www.linkedin.com/in/khaan-claasz-coockson-75344b123/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="gradient-border hover:animate-glow transition-all"

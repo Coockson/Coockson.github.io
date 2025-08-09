@@ -43,27 +43,13 @@ export default function Navigation() {
             >
               About
             </button>
-            <button 
-              onClick={() => scrollToSection('experience')}
+            <a
+              href="/blog"
               className="hover:text-tech-cyan transition-colors"
-              data-testid="nav-experience"
+              data-testid="nav-blog"
             >
-              Experience
-            </button>
-            <button 
-              onClick={() => scrollToSection('skills')}
-              className="hover:text-tech-cyan transition-colors"
-              data-testid="nav-skills"
-            >
-              Skills
-            </button>
-            <button 
-              onClick={() => scrollToSection('education')}
-              className="hover:text-tech-cyan transition-colors"
-              data-testid="nav-education"
-            >
-              Education
-            </button>
+              Blog
+            </a>
             <button 
               onClick={() => scrollToSection('contact')}
               className="hover:text-tech-cyan transition-colors"
@@ -94,27 +80,13 @@ export default function Navigation() {
               >
                 About
               </button>
-              <button 
-                onClick={() => scrollToSection('experience')}
+              <a
+                href="/blog"
                 className="text-left hover:text-tech-cyan transition-colors"
-                data-testid="nav-mobile-experience"
+                data-testid="nav-mobile-blog"
               >
-                Experience
-              </button>
-              <button 
-                onClick={() => scrollToSection('skills')}
-                className="text-left hover:text-tech-cyan transition-colors"
-                data-testid="nav-mobile-skills"
-              >
-                Skills
-              </button>
-              <button 
-                onClick={() => scrollToSection('education')}
-                className="text-left hover:text-tech-cyan transition-colors"
-                data-testid="nav-mobile-education"
-              >
-                Education
-              </button>
+                Blog
+              </a>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-left hover:text-tech-cyan transition-colors"

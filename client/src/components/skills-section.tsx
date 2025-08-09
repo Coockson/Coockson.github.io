@@ -113,7 +113,7 @@ export default function SkillsSection() {
                           className={`h-2 rounded-full ${
                             skillIndex % 2 === 0 ? 'bg-tech-cyan' : 'bg-tech-green'
                           }`}
-                          style={{ width: `${skill.level}%` }}
+                          style={{ width: `${'level' in skill ? skill.level : 0}%` }}
                           data-testid={`progress-bar-${index}-${skillIndex}`}
                         ></div>
                       </div>
@@ -127,7 +127,7 @@ export default function SkillsSection() {
                   {category.skills.map((skill, skillIndex) => (
                     <span 
                       key={skillIndex}
-                      className={`px-3 py-1 rounded-full text-sm ${getColorClasses(skill.color!)}`}
+                      className={`px-3 py-1 rounded-full text-sm ${getColorClasses('color' in skill ? skill.color! : 'cyan')}`}
                       data-testid={`skill-tag-${index}-${skillIndex}`}
                     >
                       {skill.name}

@@ -26,7 +26,7 @@ export default function ContactSection() {
   const socialLinks = [
     {
       icon: "fab fa-linkedin",
-      href: "https://linkedin.com/in/khaancc",
+      href: "https://www.linkedin.com/in/khaan-claasz-coockson-75344b123/",
       color: "tech-cyan",
       hoverBg: "tech-cyan"
     },
