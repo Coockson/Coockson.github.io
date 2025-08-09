@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210, 25%, 4%);
+  --foreground: hsl(200, 6%, 91%);
+  --card: hsl(210, 15%, 8%);
+  --card-foreground: hsl(200, 6%, 91%);
+  --popover: hsl(210, 25%, 4%);
+  --popover-foreground: hsl(200, 6%, 91%);
+  --primary: hsl(190, 100%, 50%);
+  --primary-foreground: hsl(210, 25%, 4%);
+  --secondary: hsl(210, 15%, 8%);
+  --secondary-foreground: hsl(200, 6%, 91%);
+  --muted: hsl(210, 10%, 15%);
+  --muted-foreground: hsl(200, 5%, 55%);
+  --accent: hsl(210, 15%, 8%);
+  --accent-foreground: hsl(190, 100%, 50%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(200, 6%, 91%);
+  --border: hsl(210, 10%, 19%);
+  --input: hsl(210, 15%, 8%);
+  --ring: hsl(190, 100%, 50%);
+  
+  /* Custom tech colors */
+  --tech-dark: hsl(210, 25%, 4%);
+  --tech-gray: hsl(210, 15%, 8%);
+  --tech-border: hsl(210, 10%, 19%);
+  --tech-cyan: hsl(190, 100%, 50%);
+  --tech-green: hsl(146, 100%, 58%);
+  --tech-text: hsl(200, 6%, 91%);
+  --tech-text-muted: hsl(200, 5%, 55%);
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: hsl(210, 25%, 4%);
+  --foreground: hsl(200, 6%, 91%);
+  --card: hsl(210, 15%, 8%);
+  --card-foreground: hsl(200, 6%, 91%);
+  --popover: hsl(210, 25%, 4%);
+  --popover-foreground: hsl(200, 6%, 91%);
+  --primary: hsl(190, 100%, 50%);
+  --primary-foreground: hsl(210, 25%, 4%);
+  --secondary: hsl(210, 15%, 8%);
+  --secondary-foreground: hsl(200, 6%, 91%);
+  --muted: hsl(210, 10%, 15%);
+  --muted-foreground: hsl(200, 5%, 55%);
+  --accent: hsl(210, 15%, 8%);
+  --accent-foreground: hsl(190, 100%, 50%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(200, 6%, 91%);
+  --border: hsl(210, 10%, 19%);
+  --input: hsl(210, 15%, 8%);
+  --ring: hsl(190, 100%, 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--tech-dark);
+    color: var(--tech-text);
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .tech-dark {
+    background-color: var(--tech-dark);
+  }
+  
+  .tech-gray {
+    background-color: var(--tech-gray);
+  }
+  
+  .tech-border {
+    border-color: var(--tech-border);
+  }
+  
+  .tech-cyan {
+    color: var(--tech-cyan);
+  }
+  
+  .tech-green {
+    color: var(--tech-green);
+  }
+  
+  .tech-text {
+    color: var(--tech-text);
+  }
+  
+  .tech-text-muted {
+    color: var(--tech-text-muted);
+  }
+
+  .gradient-border {
+    background: linear-gradient(45deg, var(--tech-cyan), var(--tech-green));
+    padding: 2px;
+    border-radius: 12px;
+  }
+
+  .gradient-border-inner {
+    background: var(--tech-gray);
+    border-radius: 10px;
+    height: 100%;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .typing::after {
+    content: '|';
+    animation: blink 1s infinite;
+  }
+}
+
+@keyframes glow {
+  from { 
+    box-shadow: 0 0 20px rgba(0, 216, 255, 0.3); 
+  }
+  to { 
+    box-shadow: 0 0 40px rgba(0, 216, 255, 0.6); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes blink {
+  0%, 50% { 
+    opacity: 1; 
+  }
+  51%, 100% { 
+    opacity: 0; 
+  }
+}
