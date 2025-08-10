@@ -3,7 +3,7 @@ import { spawn } from 'child_process';
 
 console.log('Starting Vite development server for client-only portfolio...');
 
-const vite = spawn('npx', ['vite', '--host', '0.0.0.0', '--port', '5000'], {
+const vite = spawn('npx', ['vite', '--config', 'temp-dev.config.ts'], {
   stdio: 'inherit'
 });
 
