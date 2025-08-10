@@ -15,7 +15,7 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
-  base: "./", // Important for GitHub Pages - uses relative paths
+  base: "/", // Use root path for GitHub Pages custom domain
   server: {
     port: 3000,
     open: true,

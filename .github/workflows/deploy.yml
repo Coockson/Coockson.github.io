@@ -33,8 +33,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Build
-        run: npm run build
+      - name: Copy GitHub Pages specific config
+        run: cp github-pages-package.json package.json
+        
+      - name: Build with GitHub Pages config
+        run: vite build --config github-pages-vite.config.ts
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
