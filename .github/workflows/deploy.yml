@@ -37,7 +37,7 @@ jobs:
         run: cp github-pages-package.json package.json
         
       - name: Build with GitHub Pages config
-        run: vite build --config github-pages-vite.config.ts
+        run: npx vite build --config github-pages-vite.config.ts
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
