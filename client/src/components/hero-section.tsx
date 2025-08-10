@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import profilePhoto from "@assets/1709896810420_1754833705260.jpeg";
 
 export default function HeroSection() {
   const [typingText, setTypingText] = useState("");
@@ -60,9 +61,9 @@ SKILLS:
         <div className="mb-8">
           <div className="inline-block p-1 rounded-full bg-gradient-to-r from-tech-cyan to-tech-green animate-float">
             <img 
-              src="https://media.licdn.com/dms/image/v2/D4D03AQHBqvdZaQ_lUg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719842055582?e=1746057600&v=beta&t=8QxfO9cOw6xLVSMZJ4JUdpHzY7SQyAT8qBE3iKm0LFw" 
+              src={profilePhoto} 
               alt="Khaan Claasz Coockson" 
-              className="w-32 h-32 rounded-full object-cover"
+              className="w-32 h-32 rounded-full object-cover object-center"
               data-testid="img-profile-photo"
             />
           </div>
