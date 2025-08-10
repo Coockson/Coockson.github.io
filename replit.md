@@ -6,6 +6,7 @@ This is a personal portfolio website for Khaan Claasz Coockson, a Senior Data Pl
 - Removed phone numbers from both hero terminal view and contact section for privacy
 - Simplified navigation to show only About (→ root page) and Blog links
 - Removed server directory dependencies - now purely client-side for static deployment
+- Commented out blog functionality with "under construction" message for future restoration
 
 # User Preferences
 

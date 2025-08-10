@@ -1,6 +1,8 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+
+/* COMMENTED OUT - BLOG FUNCTIONALITY FOR FUTURE USE
 
 interface BlogPost {
   id: string;
@@ -71,167 +73,86 @@ Khaan
   // }
 ];
 
-export default function Blog() {
-  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+*/
 
+export default function Blog() {
   return (
     <div className="min-h-screen bg-tech-dark text-tech-text">
       <Navigation />
       
       <div className="pt-20">
-        {!selectedPost ? (
-          // Blog List View
-          <div className="max-w-4xl mx-auto px-6 py-12">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl font-bold mb-4" data-testid="heading-blog">
-                <span className="text-tech-cyan">Tech</span> Blog
-              </h1>
-              <p className="text-xl text-tech-text-muted max-w-2xl mx-auto" data-testid="text-blog-description">
-                Thoughts and insights on data engineering, cloud architecture, and building scalable platforms.
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              {BLOG_POSTS.map((post) => (
-                <article 
-                  key={post.id}
-                  className="bg-tech-gray border border-tech-border rounded-lg p-8 hover:border-tech-cyan transition-colors cursor-pointer"
-                  onClick={() => setSelectedPost(post)}
-                  data-testid={`blog-post-${post.id}`}
-                >
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                    <div className="flex-1">
-                      <h2 className="text-2xl font-bold text-tech-cyan mb-2 hover:text-tech-green transition-colors" data-testid={`text-post-title-${post.id}`}>
-                        {post.title}
-                      </h2>
-                      <p className="text-tech-text-muted mb-4" data-testid={`text-post-excerpt-${post.id}`}>
-                        {post.excerpt}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag, index) => (
-                      <span 
-                        key={index}
-                        className="px-2 py-1 rounded text-xs bg-tech-cyan/10 text-tech-cyan"
-                        data-testid={`tag-${post.id}-${index}`}
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex justify-between items-center text-tech-text-muted text-sm">
-                    <span data-testid={`text-post-author-${post.id}`}>
-                      By {post.author}
-                    </span>
-                    <span data-testid={`text-post-date-${post.id}`}>
-                      {new Date(post.date).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
-                      })}
-                    </span>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            {BLOG_POSTS.length === 0 && (
-              <div className="text-center py-16">
-                <p className="text-tech-text-muted text-lg" data-testid="text-no-posts">
-                  No blog posts yet. Check back soon for updates!
+        <div className="max-w-4xl mx-auto px-6 py-12">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4" data-testid="heading-blog">
+              <span className="text-tech-cyan">Tech</span> Blog
+            </h1>
+            <p className="text-xl text-tech-text-muted max-w-2xl mx-auto mb-12" data-testid="text-blog-description">
+              Thoughts and insights on data engineering, cloud architecture, and building scalable platforms.
+            </p>
+            
+            {/* Under Construction Message */}
+            <div className="bg-tech-gray border border-tech-border rounded-lg p-12 max-w-2xl mx-auto">
+              <div className="text-center">
+                <i className="fas fa-tools text-tech-cyan text-6xl mb-6"></i>
+                <h2 className="text-2xl font-bold text-tech-cyan mb-4">
+                  Under Construction
+                </h2>
+                <p className="text-tech-text-muted text-lg mb-6 leading-relaxed">
+                  The blog is currently being prepared. Check back soon for insights on data engineering, 
+                  cloud architecture, and platform development.
                 </p>
+                <div className="flex items-center justify-center text-tech-text-muted">
+                  <i className="fas fa-code text-tech-green mr-2"></i>
+                  <span>Coming Soon</span>
+                </div>
               </div>
-            )}
+            </div>
           </div>
-        ) : (
-          // Single Post View
-          <div className="max-w-4xl mx-auto px-6 py-12">
-            <button 
-              onClick={() => setSelectedPost(null)}
-              className="mb-8 text-tech-cyan hover:text-tech-green transition-colors flex items-center"
-              data-testid="button-back-to-blog"
-            >
-              <i className="fas fa-arrow-left mr-2"></i>
-              Back to Blog
-            </button>
-
-            <article className="bg-tech-gray border border-tech-border rounded-lg p-8">
-              <header className="mb-8 border-b border-tech-border pb-8">
-                <h1 className="text-4xl font-bold text-tech-cyan mb-4" data-testid="text-single-post-title">
-                  {selectedPost.title}
-                </h1>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {selectedPost.tags.map((tag, index) => (
-                    <span 
-                      key={index}
-                      className="px-2 py-1 rounded text-xs bg-tech-cyan/10 text-tech-cyan"
-                      data-testid={`single-post-tag-${index}`}
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex justify-between items-center text-tech-text-muted">
-                  <span data-testid="text-single-post-author">
-                    By {selectedPost.author}
-                  </span>
-                  <span data-testid="text-single-post-date">
-                    {new Date(selectedPost.date).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}
-                  </span>
-                </div>
-              </header>
-
-              <div 
-                className="prose prose-invert prose-cyan max-w-none"
-                data-testid="content-single-post"
-                dangerouslySetInnerHTML={{
-                  __html: selectedPost.content
-                    .split('\n')
-                    .map(line => {
-                      if (line.startsWith('# ')) {
-                        return `<h1 class="text-3xl font-bold text-tech-cyan mb-6 mt-8">${line.slice(2)}</h1>`;
-                      }
-                      if (line.startsWith('## ')) {
-                        return `<h2 class="text-2xl font-bold text-tech-green mb-4 mt-6">${line.slice(3)}</h2>`;
-                      }
-                      if (line.startsWith('### ')) {
-                        return `<h3 class="text-xl font-bold text-tech-text mb-3 mt-4">${line.slice(4)}</h3>`;
-                      }
-                      if (line.startsWith('- ')) {
-                        return `<li class="text-tech-text-muted mb-2">${line.slice(2)}</li>`;
-                      }
-                      if (line.startsWith('**') && line.endsWith('**')) {
-                        return `<p class="text-tech-text mb-4"><strong class="text-tech-cyan">${line.slice(2, -2)}</strong></p>`;
-                      }
-                      if (line.startsWith('*') && line.endsWith('*')) {
-                        return `<p class="text-tech-text-muted italic mb-4">${line.slice(1, -1)}</p>`;
-                      }
-                      if (line.trim() === '---') {
-                        return `<hr class="border-tech-border my-8">`;
-                      }
-                      if (line.trim()) {
-                        return `<p class="text-tech-text-muted mb-4 leading-relaxed">${line}</p>`;
-                      }
-                      return '<br>';
-                    })
-                    .join('')
-                }}
-              />
-            </article>
-          </div>
-        )}
+        </div>
       </div>
 
       <Footer />
     </div>
   );
 }
+
+/* 
+
+TO RESTORE BLOG FUNCTIONALITY LATER:
+
+1. Uncomment the imports at the top:
+   import { useState, useEffect } from "react";
+
+2. Uncomment the BlogPost interface and BLOG_POSTS array (lines 4-76)
+
+3. Replace the simple function above with the full blog functionality:
+   - Add state: const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+   - Replace the current return statement with the full blog list/detail view
+   - The full functionality includes:
+     * Blog post listing with cards
+     * Click to view individual posts  
+     * Back navigation
+     * Tag display
+     * Date formatting
+     * Markdown-like content rendering
+
+4. To add new blog posts, just add objects to the BLOG_POSTS array following this structure:
+   {
+     id: "unique-post-id",
+     title: "Your Post Title", 
+     excerpt: "Brief description of the post",
+     content: "Full markdown-style content with # headers, ## subheaders, etc.",
+     date: "YYYY-MM-DD",
+     author: "Khaan Claasz Coockson",
+     tags: ["tag1", "tag2", "tag3"]
+   }
+
+The blog system includes:
+- GitHub Pages compatible (no server needed)
+- Client-side routing with SPA fallback
+- Responsive design with dark tech theme
+- Tag filtering and categorization
+- Markdown-style content with custom styling
+- SEO-friendly meta tags and structure
+
+*/
