@@ -24,6 +24,11 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  const goHome = () => {
+    window.location.href = '/';
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-tech-dark/90 backdrop-blur-md' : 'bg-tech-dark/90'
@@ -37,7 +42,7 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <button 
-              onClick={() => scrollToSection('about')}
+              onClick={goHome}
               className="hover:text-tech-cyan transition-colors"
               data-testid="nav-about"
             >
@@ -50,13 +55,6 @@ export default function Navigation() {
             >
               Blog
             </a>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="hover:text-tech-cyan transition-colors"
-              data-testid="nav-contact"
-            >
-              Contact
-            </button>
           </div>
           
           {/* Mobile Menu Button */}
@@ -74,7 +72,7 @@ export default function Navigation() {
           <div className="md:hidden mt-4 py-4 border-t border-tech-border">
             <div className="flex flex-col space-y-4">
               <button 
-                onClick={() => scrollToSection('about')}
+                onClick={goHome}
                 className="text-left hover:text-tech-cyan transition-colors"
                 data-testid="nav-mobile-about"
               >
@@ -87,13 +85,6 @@ export default function Navigation() {
               >
                 Blog
               </a>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-left hover:text-tech-cyan transition-colors"
-                data-testid="nav-mobile-contact"
-              >
-                Contact
-              </button>
             </div>
           </div>
         )}
