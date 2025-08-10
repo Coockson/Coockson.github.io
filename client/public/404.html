@@ -9,7 +9,7 @@
       // with the URL as a query parameter that can be handled by the client-side router
       const pathSegments = window.location.pathname.substr(1).split('/');
       const query = window.location.search;
-      const redirect = '/?p=/' + pathSegments.join('/') + query;
+      const redirect = './?p=/' + pathSegments.join('/') + query;
       window.location.replace(redirect);
     </script>
   </head>
