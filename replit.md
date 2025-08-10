@@ -1,6 +1,6 @@
 # Overview
 
-This is a personal portfolio website for Khaan Claasz Coockson, a Senior Data Platform Engineer at LEGO. The application is built as a single-page portfolio showcasing professional experience, skills, education, and contact information. It serves as a professional presence and resume website with a modern, tech-focused design.
+This is a personal portfolio website for Khaan Claasz Coockson, a Senior Data Platform Engineer at LEGO. The application is built as a single-page portfolio showcasing professional experience, skills, education, and contact information, plus a blog system for sharing technical insights. The site is designed for GitHub Pages deployment at username.github.io with a modern, tech-focused dark theme.
 
 # User Preferences
 
@@ -18,7 +18,7 @@ The frontend is built with **React 18** using **TypeScript** and follows a compo
 - **Routing**: Wouter for lightweight client-side routing
 - **State Management**: TanStack Query for server state management (though currently no API calls)
 
-The application uses a modular component structure with separate sections for hero, experience, skills, education, and contact information. The design emphasizes a dark tech aesthetic with cyan and green accent colors.
+The application uses a modular component structure with separate sections for hero, experience, skills, education, contact information, and a blog system. The design emphasizes a dark tech aesthetic with cyan and green accent colors. Navigation is simplified to focus on About, Blog, and Contact sections.
 
 ## Backend Architecture
 
@@ -51,7 +51,7 @@ Basic user schema is defined with username/password fields, but no authenticatio
 - **Asset Management**: Vite handles asset optimization and bundling
 - **Environment**: Configured for Replit deployment with specific plugins
 
-The application follows a monorepo structure with client, server, and shared code organized in separate directories.
+The application follows a monorepo structure with client, server, and shared code organized in separate directories. For GitHub Pages deployment, only the client-side code is needed as the blog system uses local data arrays rather than a database.
 
 # External Dependencies
 
