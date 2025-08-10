@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Khaan Claasz Coockson - Senior Data Platform Engineer</title>
+    <script>
+      // GitHub Pages SPA redirect
+      // This script takes the current page's URL and redirects to the index page
+      // with the URL as a query parameter that can be handled by the client-side router
+      const pathSegments = window.location.pathname.substr(1).split('/');
+      const query = window.location.search;
+      const redirect = '/?p=/' + pathSegments.join('/') + query;
+      window.location.replace(redirect);
+    </script>
+  </head>
+  <body>
+    <!-- This will only show briefly before the redirect -->
+    <p>Redirecting...</p>
+  </body>
+</html>
