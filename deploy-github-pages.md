@@ -53,27 +53,39 @@ npm run deploy
 4. Select "gh-pages" branch
 5. Click Save
 
+## How the Blog Page Works on GitHub Pages
+
+✅ **Single-Page Application (SPA)**: Your site uses React with client-side routing via Wouter. This means:
+- GitHub Pages serves one `index.html` file
+- React handles all navigation between "pages" (/, /blog) in the browser
+- No separate HTML files needed - everything is rendered dynamically
+- The blog posts are stored as a JavaScript array, loaded instantly
+
+✅ **Blog Features that work perfectly:**
+- Blog listing page at `/blog`
+- Individual post reading with back navigation
+- Search-engine friendly with proper meta tags
+- Fast loading since posts are bundled with the app
+- Easy content management through code editing
+
 ## Important Notes
 
 ✅ **Your website will work perfectly** because:
-- It's a React single-page application
-- The blog system uses local data (no server needed)
+- It's a React single-page application with client-side routing
+- The blog system uses local data arrays (no server needed)
 - All styling and interactions are client-side
 - Profile images are properly imported as assets
+- React Router (Wouter) handles URL changes without server requests
 
 ✅ **Features that will work:**
-- Navigation and smooth scrolling
-- Hero section with typing animation
+- Navigation and smooth scrolling between sections
+- Hero section with typing animation and profile photo
 - Experience, skills, education sections
 - Contact section with social links
-- Blog page with post management
+- **Full blog functionality** - listing, reading, navigation
 - All animations and styling
 - Mobile responsive design
-
-❌ **Features that won't work (but you don't use them):**
-- Backend API calls (you don't have any)
-- Database operations (not needed for your portfolio)
-- Server-side authentication (not used)
+- URL routing (/blog works as expected)
 
 ## Your Website URL
 Once deployed, your website will be available at:

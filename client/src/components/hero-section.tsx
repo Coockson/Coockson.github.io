@@ -100,7 +100,6 @@ SKILLS:
             <div><span className="text-tech-cyan">Location:</span> Vejle, Denmark</div>
             <div><span className="text-tech-cyan">Email:</span> khaancc@gmail.com</div>
             <div><span className="text-tech-cyan">Phone:</span> +45 6025 2061</div>
-            <div><span className="text-tech-cyan">Status:</span> <span className="text-tech-green">Available for opportunities</span></div>
           </div>
         </div>
 
