@@ -8,18 +8,11 @@ export default function ContactSection() {
       color: "tech-cyan"
     },
     {
-      icon: "fas fa-phone",
-      title: "Phone",
-      value: "+45 6025 2061",
-      href: "tel:+4560252061",
-      color: "tech-green"
-    },
-    {
       icon: "fas fa-map-marker-alt",
       title: "Location",
       value: "Vejle, Denmark",
       href: null,
-      color: "yellow-400"
+      color: "tech-green"
     }
   ];
 
@@ -55,7 +48,7 @@ export default function ContactSection() {
           Let's connect and discuss how we can work together!
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {contactInfo.map((info, index) => (
             <div 
               key={index}
