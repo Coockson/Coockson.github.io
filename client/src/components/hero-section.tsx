@@ -17,44 +17,6 @@ export default function HeroSection() {
     typeText();
   }, []);
 
-  const downloadCV = () => {
-    // Create a simple CV download
-    const cvData = `
-KHAAN CLAASZ COOCKSON
-Senior Data Platform Engineer
-
-Contact:
-Email: khaancc@gmail.com
-Phone: +45 6025 2061
-Location: Vejle, Denmark
-LinkedIn: https://linkedin.com/in/khaancc
-
-EXPERIENCE:
-• Senior Data Platform Engineer at LEGO (April 2023 - Present)
-• Software Engineer at LEGO (September 2021 - April 2023)
-• Junior Software Engineer at LEGO (February 2020 - September 2021)
-• Software Developer at Bolo Software (September 2018 - November 2019)
-
-EDUCATION:
-• Master of Science, Electrical Engineering - Aarhus University (2018-2020)
-• Bachelor of Science, Electrical and Electronics Engineering - Bilkent University (2014-2018)
-
-SKILLS:
-• Languages: TypeScript, Rust, Python, Go
-• Cloud: AWS, Azure
-• Data: Apache Spark, Kafka, Pulsar, Databricks
-• DevOps: Docker, Kubernetes, Terraform, GitHub Actions
-`;
-
-    const blob = new Blob([cvData], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Khaan_Claasz_Coockson_CV.txt';
-    link.click();
-    window.URL.revokeObjectURL(url);
-  };
-
   return (
     <section id="about" className="min-h-screen flex items-center justify-center pt-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
@@ -128,17 +90,7 @@ SKILLS:
               <span>GitHub</span>
             </div>
           </a>
-          
-          <button 
-            onClick={downloadCV}
-            className="gradient-border hover:animate-glow transition-all"
-            data-testid="button-download-cv"
-          >
-            <div className="gradient-border-inner px-6 py-3 flex items-center space-x-2">
-              <i className="fas fa-download text-tech-cyan"></i>
-              <span>Download CV</span>
-            </div>
-          </button>
+
         </div>
       </div>
     </section>

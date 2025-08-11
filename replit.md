@@ -2,7 +2,10 @@
 
 This is a personal portfolio website for Khaan Claasz Coockson, a Senior Data Platform Engineer at LEGO. The application is built as a single-page portfolio showcasing professional experience, skills, education, and contact information, plus a blog system for sharing technical insights. The site is designed for GitHub Pages deployment at username.github.io with a modern, tech-focused dark theme.
 
-**Recent Changes (Aug 10, 2025):**
+**Recent Changes (Aug 11, 2025):**
+- Removed download CV feature completely from hero section
+- Fixed GitHub Pages styling issues by using relative asset paths (base: "./")
+- Updated 404.html redirect to use relative paths for proper SPA routing
 - Removed phone numbers from both hero terminal view and contact section for privacy
 - Simplified navigation to show only About (→ root page) and Blog links
 - Removed server directory dependencies - now purely client-side for static deployment
